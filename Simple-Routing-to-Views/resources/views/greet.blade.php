@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>  
-        <p>Greetings Humans</p>
+        <p><strong>Greetings Humans</strong></p>
     </div>
 </body>
 </html>
