@@ -71,13 +71,16 @@ class ItemsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Items $itemsModel)
+    public function destroy($id)
     {
-        /*
-        make this method functional
-        1. complete the model method (delete a record by ID)
-        2. redirect back to /items
-        */
-        return 'destroy';
+        $items = new Items();
+        $deleted = $items->deleteItem($id);
+
+        if ($deleted) {
+            return redirect('/items')->with('success', 'Item deleted successfully.');
+        } else {
+            return redirect('/items')->with('error', 'Failed to delete item.');
+        }
     }
+
 }

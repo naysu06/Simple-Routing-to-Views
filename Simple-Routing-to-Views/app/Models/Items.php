@@ -30,6 +30,8 @@ class Items extends Model
     }
 
     public function deleteItem($id) {
-        /** complete this method */
+        return DB::transaction(function() use ($id) {
+            return $this->where('id', $id)->delete();
+        });
     }
 }
