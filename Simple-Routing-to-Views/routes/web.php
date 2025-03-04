@@ -9,6 +9,10 @@ Route::get('/', function () {
     return 'Hello, Laravel!';
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Route::get('/greet', [GreetController::class, 'showGreeting']);
 
 Route::resource('items', ItemsController::class);
